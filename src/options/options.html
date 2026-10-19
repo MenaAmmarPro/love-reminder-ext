@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Reminder — options</title>
+  <link rel="stylesheet" href="../common/theme.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="page-head">
+      <p class="brand">♥ Love Reminder</p>
+      <h1>Reminders</h1>
+      <p class="muted">Sweet nudges through the day, with quiet hours so we never wake each other up.</p>
+    </header>
+
+    <section class="card">
+      <div class="row">
+        <h2 class="grow">Your reminders</h2>
+        <button class="button-ghost" id="add-reminder" type="button">+ Add a reminder</button>
+      </div>
+      <div id="reminder-list" class="reminder-list"></div>
+    </section>
+
+    <section class="card">
+      <h2>Quiet hours</h2>
+      <label class="switch">
+        <input type="checkbox" id="quiet-enabled">
+        <span>Keep things quiet during these hours</span>
+      </label>
+      <div class="row quiet-row">
+        <label class="grow">
+          <span>From</span>
+          <input type="time" id="quiet-start">
+        </label>
+        <label class="grow">
+          <span>Until</span>
+          <input type="time" id="quiet-end">
+        </label>
+        <label class="grow">
+          <span>Snooze (minutes)</span>
+          <input type="number" id="snooze-minutes" min="1" max="120" step="1">
+        </label>
+      </div>
+      <p class="muted small">Windows that cross midnight (like 23:30 → 07:00) work too.</p>
+    </section>
+
+    <section class="card">
+      <h2>The little messages</h2>
+      <p class="muted small">One per line. A random line is picked each time.</p>
+      <textarea id="messages" rows="10" aria-label="Message pool"></textarea>
+      <p class="muted small" id="message-count">&nbsp;</p>
+    </section>
+
+    <div class="row actions">
+      <button class="button-primary" id="save" type="button">Save ♥</button>
+      <button class="button-ghost" id="test" type="button">Send a test</button>
+      <button class="button-ghost" id="restore" type="button">Restore defaults</button>
+    </div>
+    <p class="status" id="status" aria-live="polite"></p>
+  </div>
+
+  <script src="../common/api.js"></script>
+  <script src="../common/data.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
