@@ -168,9 +168,13 @@
     }
 
     if (alarm.name.indexOf(ALARM_PREFIX) !== 0) return;
-    var parts = alarm.name.split(":");
-    var id = parts[1];
-    var time = parts[2];
+    // The name is "reminder:<id>" for interval alarms and
+    // "reminder:<id>:<HH:MM>" for fixed-time ones — and the time keeps its own
+    // colon, so split off only the first segment after the prefix.
+    var rest = alarm.name.slice(ALARM_PREFIX.length);
+    var sep = rest.indexOf(":");
+    var id = sep === -1 ? rest : rest.slice(0, sep);
+    var time = sep === -1 ? undefined : rest.slice(sep + 1);
 
     return getSettings().then(function (settings) {
       var r = D.findReminder(settings, id);
