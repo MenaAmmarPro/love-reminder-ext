@@ -1,0 +1,125 @@
+/* love-reminder-ext — shared look for the popup and the options page.
+   Dark, gentle, pink accents. No external requests, no web fonts. */
+
+:root {
+  color-scheme: dark;
+  --bg: #090b20;
+  --bg-soft: #10142d;
+  --panel: rgba(19, 24, 53, 0.9);
+  --text: #f5f2ff;
+  --muted: #b9bbd5;
+  --pink: #ff9fcf;
+  --pink-strong: #ff72b8;
+  --purple: #bba6ff;
+  --line: rgba(219, 212, 255, 0.16);
+  --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 0%, #1a1d43 0%, transparent 60%),
+    var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+h1, h2, h3 { margin: 0 0 0.4rem; line-height: 1.25; }
+h1 { font-size: 1.15rem; }
+h2 { font-size: 1rem; }
+h3 { font-size: 0.92rem; }
+p { margin: 0 0 0.6rem; }
+
+a { color: var(--pink); }
+
+.brand {
+  color: var(--pink);
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.muted { color: var(--muted); }
+.small { font-size: 0.82rem; }
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  padding: 8px 14px;
+  transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+button:hover { transform: translateY(-1px); border-color: var(--pink); }
+
+.button-primary {
+  border-color: transparent;
+  background: linear-gradient(120deg, var(--pink-strong), #e0c1ff);
+  color: #28152b;
+  font-weight: 700;
+}
+
+.button-ghost { background: transparent; }
+
+input[type="text"],
+input[type="number"],
+input[type="time"],
+textarea,
+select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--pink);
+}
+
+textarea { resize: vertical; min-height: 90px; }
+
+label { display: block; }
+label > span { display: block; margin-bottom: 0.3rem; color: var(--muted); font-size: 0.8rem; }
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.grow { flex: 1; min-width: 0; }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.chip strong { color: var(--pink); }
+
+.status { min-height: 1.2em; color: var(--pink); font-size: 0.85rem; }
+
+.switch { display: inline-flex; align-items: center; gap: 8px; }
+.switch input { width: auto; }

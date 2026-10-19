@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Local, generated manifests (copy the right one in when loading unpacked).
+manifest.json
+
+# Packaged extension artifacts
+web-ext-artifacts/
+*.zip
+*.crx
+*.xpi
