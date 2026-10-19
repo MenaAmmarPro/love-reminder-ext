@@ -1,0 +1,65 @@
+/* love-reminder-ext — popup only */
+
+body.popup {
+  width: 320px;
+  max-height: 560px;
+  overflow-y: auto;
+  padding: 14px;
+}
+
+.popup-head {
+  margin-bottom: 10px;
+}
+
+.brand {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.actions {
+  margin-top: 4px;
+}
+
+.rem-list {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.rem-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.rem-item.is-off {
+  opacity: 0.55;
+}
+
+.rem-icon {
+  flex: none;
+  width: 1.6rem;
+  text-align: center;
+}
+
+.rem-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.rem-label {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.rem-when {
+  display: block;
+  color: var(--muted);
+  font-size: 0.76rem;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Reminder</title>
+  <link rel="stylesheet" href="../common/theme.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body class="popup">
+  <header class="popup-head">
+    <p class="brand">♥ Love Reminder</p>
+    <p class="muted small">A few gentle nudges, just for us.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="row">
+        <h2 class="grow">Right now</h2>
+        <span class="chip" id="quiet-chip" hidden>quiet hours</span>
+      </div>
+      <p class="muted small" id="quiet-line">&nbsp;</p>
+    </section>
+
+    <section class="card">
+      <h2>Your reminders</h2>
+      <ul class="rem-list" id="rem-list"></ul>
+      <p class="muted small" id="rem-empty" hidden>Nothing turned on yet — open the options to add a reminder.</p>
+    </section>
+
+    <div class="row actions">
+      <button class="button-primary" id="send-now" type="button">Send one now ♥</button>
+      <button class="button-ghost" id="open-options" type="button">Options</button>
+    </div>
+    <p class="status" id="status" aria-live="polite"></p>
+  </main>
+
+  <script src="../common/api.js"></script>
+  <script src="../common/data.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
