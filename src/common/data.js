@@ -165,7 +165,7 @@
         var mode = r.mode === "times" ? "times" : "interval";
         var item = {
           id: (typeof r.id === "string" && r.id) ? r.id.slice(0, 40) : slugId(),
-          label: String(r.label == null ? "" : r.label).slice(0, 80) || "A little reminder",
+          label: String(r.label == null ? "" : r.label).trim().slice(0, 80) || "A little reminder",
           icon: String(r.icon == null ? "" : r.icon).slice(0, 4),
           enabled: !!r.enabled,
           mode: mode
